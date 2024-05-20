@@ -1,0 +1,990 @@
+
+<!DOCTYPE html>
+<html lang="gb">
+
+<head>
+  <meta charset="utf-8">
+  <title>International Rules Timer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  .flash {
+    animation: flash 1s linear infinite;
+    color: red;
+  }
+
+  @keyframes flash {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .img {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .photo {
+    width: 50%;
+  }
+  .logo {
+    margin-left: auto;
+    margin-right: auto;
+    height: revert-layer;
+    max-width: 100%;
+  }
+  .bg {
+    background-image: url("logo.png");
+    height: 100%;
+    background-position: center top 510px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  </style>
+  <style>
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb
+  }
+
+  ::after,
+  ::before {
+    --tw-content: ''
+  }
+
+  html {
+    line-height: 1.4;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-feature-settings: normal
+  }
+
+  body {
+    margin: 0;
+    line-height: inherit
+  }
+  
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted
+  }
+
+  a {
+    color: inherit;
+    text-decoration: inherit
+  }
+
+  button {
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0
+  }
+
+  button {
+    text-transform: none
+  }
+
+  [type=button],
+  [type=visit],
+  [type=submit],
+  button {
+    -webkit-appearance: button;
+    background-color: transparent;
+    background-image: none
+  }
+
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
+    height: auto
+  }
+
+  [type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+  }
+
+  ::-webkit-search-decoration {
+    -webkit-appearance: none
+  }
+
+  figure,
+  p {
+    margin: 0
+  }
+
+  [role=button],
+  button {
+    cursor: pointer
+  }
+
+  :disabled {
+    cursor: default
+  }
+
+  img {
+    display: block;
+    vertical-align: middle
+    max-width: 100%;
+    height: auto
+  }
+
+  [hidden] {
+    display: none
+  }
+
+  *,
+  ::before,
+  ::after {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia:
+  }
+
+  ::-webkit-backdrop {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia:
+  }
+
+  ::backdrop {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia:
+  }
+
+  .ml-4 {
+    margin-left: 1rem
+  }
+
+  .flex {
+    display: flex
+  }
+
+  .justify-center {
+    justify-content: center
+  }
+
+  .rounded-full {
+    border-radius: 9999px
+  }
+
+  .ripple {
+    border-radius: 50%;
+    border:10px white solid;
+  }
+
+  .visitingPlayer {
+	border-radius: 50%;
+	border: 10px white solid;
+  }
+
+  .bg-blue-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(59 130 246 / var(--tw-bg-opacity))
+  }
+
+  .bg-green-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(34 197 94 / var(--tw-bg-opacity))
+  }
+
+  .bg-orange-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(249 115 22 / var(--tw-bg-opacity))
+  }
+
+  .bg-red-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(239 68 68 / var(--tw-bg-opacity))
+  }
+
+  .px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem
+  }
+
+  .px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem
+  }
+
+  .px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem
+  }
+
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem
+  }
+
+  .py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px
+  }
+
+  .py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem
+  }
+
+  .py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem
+  }
+
+  .py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem
+  }
+
+  .py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem
+  }
+
+  .text-center {
+    text-align: center
+  }
+
+  .font-bold {
+    font-weight: 700
+  }
+
+  .text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+  }
+
+  #hiddenScore {
+    display: none;
+    background-color: #333333;
+    border: 3px white solid;
+    position: fixed;
+    top: 400px;
+    width: 500px;
+    height: 700px;
+    left: 25%;
+    margin-left: 0px;
+    padding: 5px 5px 5px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 80px;
+  }
+
+  #ready .message {
+    text-align: center;
+    font-size: 18rem;
+  }
+
+
+  </style>
+</head>
+
+<body class="text-center bg" style="background-color: #333333;color: white;">
+
+  <div id="hiddenScore">
+    <div class = "message"> <H1>Who Won??</H1> </div>
+      <div class="flex justify-center py-0">
+        <div class="font-bold py-4" style="font-size: 5rem;">
+          <button id="P1" class="px-20 py-4 bg-blue-500 text-white font-bold rounded-full">Player 1</button>
+          <button id="" class="px-4 py-2 bg-white-500 text-white font-bold rounded-full ml-4"></button>
+          <button id="P2" class="px-20 py-4 bg-green-500 text-white font-bold rounded-full ml-4">Player 2</button>
+        </div>
+      </div>
+  </div>
+
+  <div class="font-bold py-0" style="font-size: 3rem;">
+    <button id="p1score" class="px-32 py-2 bg-red-500 text-white font-bold rounded-full">P1 : 0</button>
+    <button id="" class="px-4 py-2 bg-white-500 text-white font-bold rounded-full ml-4"></button>
+    <button id="p2score" class="px-32 py-2 bg-red-500 text-white font-bold rounded-full">P2 : 0</button>
+  </div>
+
+  <div class="font-bold py-0" style="font-size: 30rem;">
+    <span id="countdown">45</span>
+  </div>
+
+  <div class="flex justify-center py-0">
+    <div class="font-bold py-4" style="font-size: 4rem;">
+      <button id="visit" class="px-20 py-4 bg-blue-500 text-white font-bold rounded-full">Visit</button>
+      <button id="" class="px-4 py-2 bg-white-500 text-white font-bold rounded-full ml-4"></button>
+      <button id="start" class="px-20 py-4 bg-green-500 text-white font-bold rounded-full ml-4">Start</button>
+    </div>
+  </div>
+
+  <div class="flex justify-center py-2">
+    <div class="font-bold py-8" style="font-size: 4rem;">
+      <button id="ext-1" class="px-14 py-2 bg-orange-500 text-white font-bold rounded-full ml-4">P1 EXT</button>
+      <button id="" class="px-4 py-2 bg-white-500 text-white font-bold rounded-full ml-4"></button>
+      <button id="ext-2" class="px-14 py-2 bg-orange-500 text-white font-bold rounded-full ml-4">P2 EXT</button>
+    </div>
+  </div>
+  <div class="flex justify-center py-0">
+    <div class="font-bold py-4" style="font-size: 5rem;">
+      <!-- <button id="reset" class="px-14 py-2 bg-orange-500 text-white font-bold rounded-full ml-4">Reset</button> -->
+      <button id="resetCountdown" class="px-20 py-4 bg-blue-500 text-white font-bold rounded-full">Reset Countdown</button>
+    </div>
+  </div>
+  <div class="flex justify-center py-0">
+    <div class="font-bold py-32" style="font-size: 3rem;">
+      <button id="new-frame" class="px-16 py-2 bg-red-500 text-white font-bold rounded-full">New Frame</button>
+      <button id="" class="px-4 py-2 bg-white-500 text-white font-bold rounded-full ml-4"></button>
+      <button id="new-match" class="px-16 py-2 bg-red-500 text-white font-bold rounded-full">New Match</button>
+    </div>
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+const countdown = document.getElementById("countdown");
+const visitButton = document.getElementById("visit");
+const startButton = document.getElementById("start");
+const ext1Button = document.getElementById("ext-1");
+const ext2Button = document.getElementById("ext-2");
+const newFrameButton = document.getElementById("new-frame");
+const p1ScoreButton = document.getElementById("p1score");
+const p2ScoreButton = document.getElementById("p2score");
+const newMatchButton = document.getElementById("new-match");
+const resetCountdownButton = document.getElementById("resetCountdown");
+const p1Button = document.getElementById("P1");
+const p2Button = document.getElementById("P2");
+const whoWon = document.getElementById("hiddenScore");
+const sound = new Audio("6seconds.wav");
+const sound30 = new Audio("bip.wav");
+
+let countdownValue = 45; // start countdown at 45 seconds
+let interval; // declare interval variable
+let countdownStarted = false; // boolean variable to track if countdown has started or not
+let breakingPlayer = 1; // Declare a variable to track who is the player that breaks. 
+let visitingPlayer = 1; // Declare a variable to track who's visit it is
+let p1Score = 0;
+let p2Score = 0;
+let p1ExtUsed = false;
+let p2ExtUsed = false;
+
+
+
+
+		// FUNCTIONS
+		
+		
+		
+		
+		
+function hide (elements) {
+  elements = elements.length ? elements : [elements];
+  for (var index = 0; index < elements.length; index++) {
+    elements[index].style.display = 'none';
+  }
+}
+
+
+function show (elements, specifiedDisplay) {
+  elements = elements.length ? elements : [elements];
+  for (var index = 0; index < elements.length; index++) {
+    elements[index].style.display = specifiedDisplay || 'block';
+  }
+}
+
+	// Check for Localstorage Items to track player score
+
+function checkScoreOnLoad() {
+	if(localStorage.getItem("P1") === null ) {
+		p1ScoreButton.textContent = "P1 : 0";
+	} else {
+		p1ScoreButton.textContent = "P1 : " + localStorage.getItem('P1');
+		p1Score = localStorage.getItem('P1');
+	}
+
+	if(localStorage.getItem("P2") === null ) {
+        p2ScoreButton.textContent = "P2 : 0";
+	} else {
+		p2ScoreButton.textContent = "P2 : " + localStorage.getItem('P2');
+		p2Score = localStorage.getItem('P2');
+	}
+
+	if (localStorage.getItem("BreakingPlayer") === null ) {
+		p2ScoreButton.classList.remove("ripple");
+        p1ScoreButton.classList.add("ripple");
+        breakingPlayer = 1;
+	} else if (localStorage.getItem("BreakingPlayer") == 1 ) {
+		p2ScoreButton.classList.remove("ripple");
+        p1ScoreButton.classList.add("ripple");
+        breakingPlayer = 1;
+	} else if (localStorage.getItem("BreakingPlayer") == 2) {
+		p1ScoreButton.classList.remove("ripple");
+        p2ScoreButton.classList.add("ripple");
+        breakingPlayer = 2;
+	}
+
+	if (localStorage.getItem("VisitingPlayer") === null ) {
+		ext1Button.classList.add("visitingPlayer");
+		// enableButton(ext1Button);
+		ext2Button.classList.remove("visitingPlayer");
+		// disableButton(ext2Button);
+	} else if (localStorage.getItem("VisitingPlayer") == 1 ) {
+		ext1Button.classList.add("visitingPlayer");
+		enableButton(ext1Button);
+		ext2Button.classList.remove("visitingPlayer");
+		disableButton(ext2Button);
+	} else if (localStorage.getItem("VisitingPlayer") == 2) {
+		ext2Button.classList.add("visitingPlayer");
+		enableButton(ext2Button);
+		ext1Button.classList.remove("visitingPlayer");
+		disableButton(ext1Button);
+	}
+}
+
+
+	// Thie Function Disables a provided button and sets its background colour to Grey
+
+function disableButton(button) {
+	button.disabled = true; 		// Disable Click Function
+	button.classList.add("bg-gray-500"); 	// Set colour to Grey
+}
+
+        // Thie Function Disables a provided button and sets its background colour to Grey
+
+function enableButton(button) {
+        button.disabled = false;                 // Disable Click Function
+        button.classList.remove("bg-gray-500");    // Set colour to Grey
+}
+
+function resetAudio(Audio) {
+	Audio.currentTime = 0;
+	Audio.pause();
+}
+
+	// This Function controls the feature of the Visit button
+
+function visitCountdown(restart) {
+	// sound.currentTime = 0;
+	// sound.pause();
+	resetAudio(sound);
+	resetAudio(sound30);
+	countdownValue = 45; // visit countdown to 45 seconds
+	countdown.textContent = countdownValue;
+	clearInterval(interval)
+	startButton.textContent = "Start";
+	countdownStarted = false;
+	countdown.classList.remove("flash");
+	
+	if (restart) { 
+	startCountdown();
+	}
+}
+
+	// This function controls the Start / Pause / Resume functionality on the Start Button
+
+function startCountdown() {
+	if (startButton.textContent === "Start") {
+		countdownStarted = true;
+		interval = setInterval(() => {
+			countdownValue--;
+			countdown.textContent = countdownValue;
+			if (countdownValue === 15) {
+				resetAudio(sound30);
+				// sound30.currentTime = 0;
+				sound30.play();
+			}
+
+			if (countdownValue === 5) {
+				countdown.classList.add("flash");
+				resetAudio(sound);
+				// sound.currentTime = 0;
+				sound.play();
+			}
+
+			if (countdownValue === 0) {
+				clearInterval(interval);
+			}
+		}, 1000);
+		startButton.textContent = "Pause";
+		
+	} else if (startButton.textContent === "Pause") {
+		clearInterval(interval);
+		startButton.textContent = "Resume";
+	} else {
+		countdownStarted = true;
+			interval = setInterval(() => {
+				countdownValue--;
+				countdown.textContent = countdownValue;
+					if (countdownValue === 15) {
+						resetAudio(sound30);
+							// sound30.currentTime = 0;
+							sound30.play();
+					}
+
+					if (countdownValue === 5) {
+						countdown.classList.add("flash");
+						resetAudio(sound);
+						// sound.currentTIme = 0;
+						sound.play();
+					}
+
+					if (countdownValue === 0) {
+						clearInterval(interval);
+					}
+			}, 1000);
+		startButton.textContent = "Pause";
+	}
+}
+
+	// This Function controls adding the 15 Second Extensions per player per frame
+
+function addTime(button) {
+	if (button.disabled || !countdownStarted) { // only allow button to be clicked if countdown has not started
+		return;
+	}
+	countdownValue += 15;
+	countdown.textContent = countdownValue;
+
+	if (countdownValue > 5) {
+		resetAudio(sound);
+		resetAudio(sound30);
+		// sound.currentTime = 0;
+		// sound.pause(); // play beep sound
+		countdown.classList.remove("flash"); // add flash class to countdown element
+		button.classList.add("bg-gray-500"); // add flash class to countdown element
+	}
+	button.disabled = true;
+}
+
+function screenSetup() {
+        // Highlight Breaking Player at the start of Each Frame
+
+        if (breakingPlayer == 1) {
+                p1ScoreButton.classList.remove("ripple");
+                p2ScoreButton.classList.add("ripple");
+                breakingPlayer = 2;
+        } else if (breakingPlayer == 2) {
+                p2ScoreButton.classList.remove("ripple");
+                p1ScoreButton.classList.add("ripple");
+                breakingPlayer = 1;
+        }
+        visitingPlayer = breakingPlayer
+        if (visitingPlayer === 1) {
+                // visitingPlayer++;
+                ext1Button.classList.add("visitingPlayer");
+                // enableButton(ext1Button);
+                ext2Button.classList.remove("visitingPlayer");
+                disableButton(ext2Button);
+                // ext2Button.classList.add("bg-gray-500");
+        } else {
+                // visitingPlayer--;
+                ext1Button.classList.remove("visitingPlayer");
+                disableButton(ext1Button);
+                // ext1Button.classList.add("bg-gray-500");
+                ext2Button.classList.add("visitingPlayer");
+                // enableButton(ext2Button);
+        }
+
+        visitCountdown(false);
+        // ext1Button.disabled = false;
+        // ext2Button.disabled = false;
+        p1ExtUsed = false;
+        p2ExtUsed = false;
+        visitButton.disabled = true;
+        // ext1Button.classList.remove("bg-gray-500");
+        // ext2Button.classList.remove("bg-gray-500");
+        visitButton.classList.add("bg-gray-500");
+}
+
+function saveScore(P1,P2,BP,VP) {
+	localStorage.setItem("P1",P1);
+	localStorage.setItem("P2",P2);
+	localStorage.setItem("BreakingPlayer",BP);
+	localStorage.setItem("VisitingPlayer",VP);
+}
+
+
+
+
+
+
+	// Button Listener Event Handlers
+
+
+
+
+
+
+visitButton.addEventListener("click", () => {
+	visitCountdown(true);
+	if (visitingPlayer === 1) {
+		visitingPlayer++;
+		ext1Button.classList.remove("visitingPlayer");
+		disableButton(ext1Button);
+		ext2Button.classList.add("visitingPlayer");
+		if (p2ExtUsed) {
+			disableButton(ext2Button);
+		} else {
+			enableButton(ext2Button);
+		}
+		saveScore(p1Score,p2Score,breakingPlayer,visitingPlayer);
+	} else {
+		visitingPlayer--;
+		ext1Button.classList.add("visitingPlayer");
+			if (p1ExtUsed) {
+					disableButton(ext1Button);
+			} else {
+					enableButton(ext1Button);
+			}
+		ext2Button.classList.remove("visitingPlayer");
+		disableButton(ext2Button);
+		saveScore(p1Score,p2Score,breakingPlayer,visitingPlayer);
+	}
+// alert(visitingPlayer);
+});
+
+startButton.addEventListener("click", () => {
+	if (startButton.textContent === "Start") {
+		if (breakingPlayer == 1) {
+			//alert(breakingPlayer);
+			enableButton(visitButton);
+			enableButton(ext1Button);
+			enableButton(resetCountdownButton);
+		} else {
+			//alert(breakingPlayer);
+			enableButton(visitButton);
+			enableButton(ext2Button);
+			enableButton(resetCountdownButton);
+		}
+		// alert("Starting");
+	} else if (startButton.textContent === "Pause") {
+		disableButton(visitButton);
+		disableButton(p1Button);
+		disableButton(p2Button);
+		disableButton(resetCountdownButton);
+		if (localStorage.getItem("VisitingPlayer") === null ) {
+			ext1Button.classList.add("visitingPlayer");
+			enableButton(ext1Button);
+			ext2Button.classList.remove("visitingPlayer");
+			disableButton(ext2Button);
+			//alert("Visiting Player is Null")
+		} else if (localStorage.getItem("VisitingPlayer") == 1 ) {
+			//ext1Button.classList.add("visitingPlayer");
+			//enableButton(ext1Button);
+			//ext2Button.classList.remove("visitingPlayer");
+			//disableButton(ext2Button);
+			//alert("Visiting Player is 1")
+		if (p1ExtUsed) { 
+			ext2Button.classList.remove("visitingPlayer");
+			disableButton(ext2Button);
+			ext1Button.classList.add("visitingPlayer");
+			disableButton(ext1Button);
+		} else {
+			ext2Button.classList.remove("visitingPlayer");
+			disableButton(ext2Button);
+			ext1Button.classList.add("visitingPlayer");
+			enableButton(ext1Button);
+		}
+		} else if (localStorage.getItem("VisitingPlayer") == 2) {
+			if (p2ExtUsed) { 
+				ext1Button.classList.remove("visitingPlayer");
+				disableButton(ext1Button);
+				ext2Button.classList.add("visitingPlayer");
+				disableButton(ext2Button);
+			} else {
+				ext1Button.classList.remove("visitingPlayer");
+				disableButton(ext1Button);
+				ext2Button.classList.add("visitingPlayer");
+				enableButton(ext2Button);
+			}
+			//alert("Visiting Player is 2")
+		}
+	} else {
+		enableButton(visitButton);
+		enableButton(p1Button);
+		enableButton(p2Button);
+		enableButton(resetCountdownButton);
+		if (localStorage.getItem("VisitingPlayer") === null ) {
+			ext1Button.classList.add("visitingPlayer");
+			enableButton(ext1Button);
+			ext2Button.classList.remove("visitingPlayer");
+			disableButton(ext2Button);
+			//alert("Visiting Player is Null")
+		} else if (localStorage.getItem("VisitingPlayer") == 1 ) {
+			//ext1Button.classList.add("visitingPlayer");
+			//enableButton(ext1Button);
+			//ext2Button.classList.remove("visitingPlayer");
+			//disableButton(ext2Button);
+			//alert("Visiting Player is 1")
+		if (p1ExtUsed) { 
+			ext2Button.classList.remove("visitingPlayer");
+			disableButton(ext2Button);
+			ext1Button.classList.add("visitingPlayer");
+			disableButton(ext1Button);
+		} else {
+			ext2Button.classList.remove("visitingPlayer");
+			disableButton(ext2Button);
+			ext1Button.classList.add("visitingPlayer");
+			enableButton(ext1Button);
+		}
+		} else if (localStorage.getItem("VisitingPlayer") == 2) {
+			if (p2ExtUsed) { 
+				ext1Button.classList.remove("visitingPlayer");
+				disableButton(ext1Button);
+				ext2Button.classList.add("visitingPlayer");
+				disableButton(ext2Button);
+			} else {
+				ext1Button.classList.remove("visitingPlayer");
+				disableButton(ext1Button);
+				ext2Button.classList.add("visitingPlayer");
+				enableButton(ext2Button);
+			}
+			//alert("Visiting Player is 2")
+		}
+	}
+	
+	startCountdown();
+	// resetAudio(sound);
+	// resetAudio(sound30);
+	sound.play();
+	sound.pause();
+	sound30.play();
+	sound30.pause();
+	// visitButton.disabled = false;
+	//enableButton(visitButton);
+	//visitButton.classList.remove("bg-gray-500");
+	//enableButton(resetCountdownButton);
+	
+	
+	
+});
+
+p1Button.addEventListener("click", () => {
+	p1Score++;
+	p1ScoreButton.textContent = "P1 : " + p1Score;
+	screenSetup();
+	saveScore(p1Score,p2Score,breakingPlayer,visitingPlayer);
+	// screenSetup();
+	hide(document.getElementById('hiddenScore'));
+});
+
+p2Button.addEventListener("click", () => {
+	p2Score++;
+	p2ScoreButton.textContent = "P2 : " + p2Score;
+	screenSetup();
+	saveScore(p1Score,p2Score,breakingPlayer,visitingPlayer);
+        // screenSetup();
+	hide(document.getElementById('hiddenScore'));
+});
+
+resetCountdownButton.addEventListener("click", () => {
+        visitCountdown(true);
+});
+
+ext1Button.addEventListener("click", () => {
+	addTime(ext1Button);	
+	p1ExtUsed = true;
+});
+
+ext2Button.addEventListener("click", () => {
+	addTime(ext2Button);
+	p2ExtUsed = true;
+});
+
+newFrameButton.addEventListener("click", () => {
+	visitCountdown(false);
+	show(document.getElementById('hiddenScore'));
+});
+
+newMatchButton.addEventListener("click", () => {
+if (confirm("Are you sure you want to reset Match Progress?")) {
+	p1ExtUsed = false;
+    p2ExtUsed = false;
+	breakingPlayer = 1;
+	visitingPlayer = 1;
+	p1Score = 0;
+	p2Score = 0;
+	visitButton.classList.add("bg-gray-500");
+	resetAudio(sound);
+	resetAudio(sound30);
+	countdownValue = 45; // visit countdown to 45 seconds
+	countdown.textContent = countdownValue;
+	clearInterval(interval);
+	startButton.textContent = "Start";
+	countdownStarted = false;
+	countdown.classList.remove("flash");
+	localStorage.clear();
+	localStorage.removeItem("P1");
+	localStorage.removeItem("P2");
+	localStorage.removeItem("BreakingPlayer");
+	localStorage.removeItem("VisitingPlayer"); 
+	p1ScoreButton.textContent = "P1 : 0";
+	p2ScoreButton.textContent = "P2 : 0";
+	countdown.textContent = countdownValue;
+	p1ScoreButton.classList.add("ripple");
+	p2ScoreButton.classList.remove("ripple");
+	ext1Button.classList.add("visitingPlayer");
+	disableButton(ext1Button);
+	ext2Button.classList.remove("visitingPlayer");
+	disableButton(ext2Button);
+	disableButton(p1ScoreButton);
+	disableButton(p2ScoreButton);
+	disableButton(visitButton);
+	disableButton(resetCountdownButton);
+	//ext1Button.classList.remove("visitingPlayer");
+	// resetAudio(sound);
+	// resetAudio(sound30);
+	//checkScoreOnLoad();
+} else {
+	// Do Nothing
+}
+
+});
+
+
+// Set Breaking Player Border and Disable the Scoreboard and visit buttons
+countdown.textContent = countdownValue;
+p1ScoreButton.classList.add("ripple");
+// ext1Button.classList.add("visitingPlayer");
+disableButton(p1ScoreButton);
+disableButton(p2ScoreButton);
+disableButton(visitButton);
+disableButton(ext1Button);
+disableButton(ext2Button);
+disableButton(resetCountdownButton);
+// resetAudio(sound);
+// resetAudio(sound30);
+checkScoreOnLoad();
+
+
+  </script>
+</body>
+
+</html>

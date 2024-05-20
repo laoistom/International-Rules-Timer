@@ -1,0 +1,627 @@
+
+<!DOCTYPE html>
+<html lang="gb">
+
+<head>
+  <meta charset="utf-8">
+  <title>International Rules Timer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  .flash {
+    animation: flash 1s linear infinite;
+    color: red;
+  }
+
+  @keyframes flash {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .img {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .photo {
+    width: 50%;
+  }
+  .logo {
+    margin-left: auto;
+    margin-right: auto;
+    height: revert-layer;
+    max-width: 100%;
+  }
+  .bg {
+    background-image: url("logo.png");
+    height: 100%;
+    background-position: center top 400px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  </style>
+  <style>
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb
+  }
+
+  ::after,
+  ::before {
+    --tw-content: ''
+  }
+
+  html {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-feature-settings: normal
+  }
+
+  body {
+    margin: 0;
+    line-height: inherit
+  }
+  
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted
+  }
+
+  a {
+    color: inherit;
+    text-decoration: inherit
+  }
+
+  button {
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0
+  }
+
+  button {
+    text-transform: none
+  }
+
+  [type=button],
+  [type=visit],
+  [type=submit],
+  button {
+    -webkit-appearance: button;
+    background-color: transparent;
+    background-image: none
+  }
+
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
+    height: auto
+  }
+
+  [type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+  }
+
+  ::-webkit-search-decoration {
+    -webkit-appearance: none
+  }
+
+  figure,
+  p {
+    margin: 0
+  }
+
+  [role=button],
+  button {
+    cursor: pointer
+  }
+
+  :disabled {
+    cursor: default
+  }
+
+  img {
+    display: block;
+    vertical-align: middle
+    max-width: 100%;
+    height: auto
+  }
+
+  [hidden] {
+    display: none
+  }
+
+  *,
+  ::before,
+  ::after {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia:
+  }
+
+  ::-webkit-backdrop {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia:
+  }
+
+  ::backdrop {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia:
+  }
+
+  .ml-4 {
+    margin-left: 1rem
+  }
+
+  .flex {
+    display: flex
+  }
+
+  .justify-center {
+    justify-content: center
+  }
+
+  .rounded-full {
+    border-radius: 9999px
+  }
+
+  .bg-blue-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(59 130 246 / var(--tw-bg-opacity))
+  }
+
+  .bg-green-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(34 197 94 / var(--tw-bg-opacity))
+  }
+
+  .bg-orange-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(249 115 22 / var(--tw-bg-opacity))
+  }
+
+  .bg-red-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(239 68 68 / var(--tw-bg-opacity))
+  }
+
+  .px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem
+  }
+
+  .px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem
+  }
+
+  .px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem
+  }
+
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem
+  }
+
+  .py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px
+  }
+
+  .py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem
+  }
+
+  .py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem
+  }
+
+  .py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem
+  }
+
+  .py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem
+  }
+
+  .text-center {
+    text-align: center
+  }
+
+  .font-bold {
+    font-weight: 700
+  }
+
+  .text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+  }
+  </style>
+</head>
+
+<body class="text-center bg" style="background-color: #333333;color: white;">
+  <div class="font-bold py-0" style="font-size: 35rem;">
+    <span id="countdown">45</span>
+  </div>
+  <div class="flex justify-center py-0">
+    <div class="font-bold py-8" style="font-size: 5rem;">
+      <button id="reset" class="px-20 py-6 bg-blue-500 text-white font-bold rounded-full">Reset</button>
+      <button id="" class="px-4 py-2 bg-white-500 text-white font-bold rounded-full ml-4"></button>
+      <button id="start" class="px-20 py-6 bg-green-500 text-white font-bold rounded-full ml-4">Start</button>
+    </div>
+  </div>
+  <div class="flex justify-center py-2">
+    <div class="font-bold py-8" style="font-size: 5rem;">
+      <button id="ext-1" class="px-14 py-2 bg-orange-500 text-white font-bold rounded-full ml-4">P1 EXT</button>
+      <button id="" class="px-4 py-2 bg-white-500 text-white font-bold rounded-full ml-4"></button>
+      <button id="ext-2" class="px-14 py-2 bg-orange-500 text-white font-bold rounded-full ml-4">P2 EXT</button>
+    </div>
+  </div>
+  <div class="flex justify-center py-0">
+    <div class="font-bold py-32" style="font-size: 3rem;">
+      <button id="new-frame" class="px-16 py-2 bg-red-500 text-white font-bold rounded-full">New Frame</button>
+    </div>
+  </div>
+
+  <script>
+  const countdown = document.getElementById("countdown");
+  const visitButton = document.getElementById("reset");
+  const startButton = document.getElementById("start");
+  const ext1Button = document.getElementById("ext-1");
+  const ext2Button = document.getElementById("ext-2");
+  const resetAllButton = document.getElementById("new-frame");
+
+  let countdownValue = 45; // start countdown at 45 seconds
+  let interval; // declare interval variable
+  let countdownStarted = false; // boolean variable to track if countdown has started or not
+  countdown.textContent = countdownValue;
+
+  const sound = new Audio("6seconds.wav");
+  const sound30 = new Audio("bip.wav");
+
+  function resetAudio(Audio) {
+    Audio.currentTime = 0;
+    Audio.pause();
+  
+  }
+  function visitCountdown(restart) {
+    // sound.pause();
+    resetAudio(sound);
+	  resetAudio(sound30);
+    countdownValue = 45; // visit countdown to 45 seconds
+    countdown.textContent = countdownValue;
+    clearInterval(interval)
+    startButton.textContent = "Start";
+    countdownStarted = false;
+    countdown.classList.remove("flash");
+    
+    if (restart) { 
+      startCountdown();
+    }
+  }
+
+/*  function startCountdown() {
+    if (startButton.textContent === "Start") {
+      countdownStarted = true; // set countdownStarted to true when countdown starts
+      interval = setInterval(() => {
+        countdownValue--;
+        countdown.textContent = countdownValue;
+        if (countdownValue === 15) {
+          resetAudio(sound30);
+          sound30.play();
+        }
+        if (countdownValue === 5) {
+          countdown.classList.add("flash"); // add flash class to countdown element
+          resetAudio(sound);
+          sound.play(); // play beep sound
+        }
+
+        if (countdownValue === 0) {
+          clearInterval(interval);
+        }
+      }, 1000);
+      startButton.textContent = "Pause";
+    } else {
+      clearInterval(interval);
+
+      startButton.textContent = "Start";
+    }
+  }
+*/
+
+  function startCountdown() {
+	if (startButton.textContent === "Start") {
+		countdownStarted = true; // set countdownStarted to true when countdown starts
+		interval = setInterval(() => 
+		{
+			countdownValue--;
+			countdown.textContent = countdownValue;
+        if (countdownValue === 15) 
+        {
+          sound30.currentTime = 0;
+          sound30.play();
+        }
+        if (countdownValue === 5) 
+        {
+          countdown.classList.add("flash"); // add flash class to countdown element
+          sound.currentTime = 0;
+          sound.play(); // play beep sound
+        }
+
+        if (countdownValue === 0) 
+        {
+          clearInterval(interval);
+        }
+		}, 1000);
+		startButton.textContent = "Pause";
+	} else if (startButton.textContent === "Pause") {
+		clearInterval(interval);
+		startButton.textContent = "Resume";
+	} else if (startButton.textContent === "Resume") {
+		countdownStarted = true; // set countdownStarted to true when countdown starts
+        interval = setInterval(() => 
+          {
+          countdownValue--;
+          countdown.textContent = countdownValue;
+          if (countdownValue === 15) 
+          {
+            sound30.currentTime = 0;
+            sound30.play();
+          }
+          if (countdownValue === 5) 
+          {
+            countdown.classList.add("flash"); // add flash class to countdown element
+            sound.currentTime = 0;
+            sound.play(); // play beep sound
+          }
+
+          if (countdownValue === 0) 
+          {
+            clearInterval(interval);
+          }
+        }, 1000);
+        startButton.textContent = "Pause";
+	}
+  }
+
+/*
+  function startCountdown() {
+    alert("Start Code");
+    if (startButton.textContent === "Start") 
+    {
+      countdownStarted = true; // set countdownStarted to true when countdown starts
+      interval = setInterval(() => 
+      {
+        countdownValue--;
+        countdown.textContent = countdownValue;
+        if (countdownValue === 15) 
+        {
+          sound30.currentTime = 0;
+          sound30.play();
+        }
+        if (countdownValue === 5) 
+        {
+          countdown.classList.add("flash"); // add flash class to countdown element
+          sound.currentTime = 0;
+          sound.play(); // play beep sound
+        }
+
+        if (countdownValue === 0) 
+        {
+          clearInterval(interval);
+        }
+      }, 1000);
+      startButton.textContent = "Pause";
+    } elseif (startButton.textContent === "Pause") {
+      alert("Pause Code");
+      clearInterval(interval);
+      startButton.textContent = "Resume";
+    } else {
+        startButton.textContent === "Resume") 
+        alert("Resume Code");
+        countdownStarted = true; // set countdownStarted to true when countdown starts
+        interval = setInterval(() => 
+          {
+          countdownValue--;
+          countdown.textContent = countdownValue;
+          if (countdownValue === 15) 
+          {
+            sound30.currentTime = 0;
+            sound30.play();
+          }
+          if (countdownValue === 5) 
+          {
+            countdown.classList.add("flash"); // add flash class to countdown element
+            sound.currentTime = 0;
+            sound.play(); // play beep sound
+          }
+
+          if (countdownValue === 0) 
+          {
+            clearInterval(interval);
+          }
+        }, 1000);
+        startButton.textContent = "Pause";
+      }
+    }
+*/
+  function addTime(button) {
+    if (button.disabled || !countdownStarted) { // only allow button to be clicked if countdown has not started
+      return;
+    }
+    countdownValue += 15;
+    countdown.textContent = countdownValue;
+
+    if (countdownValue > 5) {
+      resetAudio(sound);
+		  resetAudio(sound30);
+      countdown.classList.remove("flash"); // add flash class to countdown element
+      button.classList.add("bg-gray-500"); // add flash class to countdown element
+    }
+    button.disabled = true;
+  }
+
+  visitButton.addEventListener("click", () => {
+    visitCountdown(true);
+  });
+  startButton.addEventListener("click", () => {
+    startCountdown();
+    sound.play();
+    sound.pause()
+  });
+  ext1Button.addEventListener("click", () => addTime(ext1Button));
+  ext2Button.addEventListener("click", () => addTime(ext2Button));
+  resetAllButton.addEventListener("click", () => {
+    visitCountdown(false);
+    ext1Button.disabled = false;
+    ext2Button.disabled = false;
+    ext1Button.classList.remove("bg-gray-500");
+    ext2Button.classList.remove("bg-gray-500");
+  });
+  </script>
+</body>
+
+</html>
