@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<p><a href="/admin">← Back to dashboard</a></p>
+<h2>Manage: {{ tournament.name }}</h2>
+
+<section>
+  <h3>Tournament settings</h3>
+  <form method="post" action="/admin/tournaments/{{ tournament.id }}/settings">
+    <label>Status
+      <select name="status_value">
+        <option value="scheduled" {% if tournament.status=='scheduled' %}selected{% endif %}>Scheduled</option>
+        <option value="running" {% if tournament.status=='running' %}selected{% endif %}>Running</option>
+        <option value="completed" {% if tournament.status=='completed' %}selected{% endif %}>Completed</option>
+      </select>
+    </label>
+    <label><input type="checkbox" name="draw_published" {% if tournament.draw_published %}checked{% endif %} /> Draw published</label>
+    <button type="submit">Save settings</button>
+  </form>
+</section>
+
+<section>
+  <h3>Players</h3>
+  <form method="post" action="/admin/tournaments/{{ tournament.id }}/players">
+    <label>Player name <input name="name" required /></label>
+    <button type="submit">Add player</button>
+  </form>
+  <ul>
+    {% for p in players %}<li>{{ p.name }}</li>{% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h3>Matches / draw</h3>
+  <form method="post" action="/admin/tournaments/{{ tournament.id }}/matches">
+    <label>Round <input name="round_name" required /></label>
+    <label>Table <input name="table_no" required /></label>
+    <label>Player A <input name="player_a" required /></label>
+    <label>Player B <input name="player_b" required /></label>
+    <button type="submit">Add match</button>
+  </form>
+
+  {% if matches %}
+    {% for m in matches %}
+    <form class="card" method="post" action="/admin/matches/{{ m.id }}/score">
+      <strong>{{ m.round_name }} • Table {{ m.table_no }}</strong>
+      <div>{{ m.player_a }} vs {{ m.player_b }}</div>
+      <label>{{ m.player_a }} score <input type="number" name="score_a" min="0" value="{{ m.score_a }}" /></label>
+      <label>{{ m.player_b }} score <input type="number" name="score_b" min="0" value="{{ m.score_b }}" /></label>
+      <label><input type="checkbox" name="is_finished" {% if m.is_finished %}checked{% endif %} /> Match finished</label>
+      <button type="submit">Update score</button>
+    </form>
+    {% endfor %}
+  {% else %}
+    <p>No matches yet.</p>
+  {% endif %}
+</section>
+{% endblock %}

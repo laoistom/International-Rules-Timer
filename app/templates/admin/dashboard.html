@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin dashboard</h2>
+<form method="post" action="/admin/logout"><button type="submit">Logout</button></form>
+
+<section>
+  <h3>Create tournament</h3>
+  <form method="post" action="/admin/tournaments">
+    <label>Name <input name="name" required /></label>
+    <label>Location <input name="location" required /></label>
+    <label>Starts at <input type="datetime-local" name="starts_at" required /></label>
+    <label>Status
+      <select name="status_value">
+        <option value="scheduled">Scheduled</option>
+        <option value="running">Running</option>
+        <option value="completed">Completed</option>
+      </select>
+    </label>
+    <button type="submit">Create</button>
+  </form>
+</section>
+
+<section>
+  <h3>Existing tournaments</h3>
+  {% if tournaments %}
+    <ul>
+      {% for t in tournaments %}
+      <li>
+        <a href="/admin/tournaments/{{ t.id }}">{{ t.name }}</a>
+        ({{ t.location }}) - {{ t.status }} {% if t.draw_published %}• Draw Published{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No tournaments yet.</p>
+  {% endif %}
+</section>
+{% endblock %}

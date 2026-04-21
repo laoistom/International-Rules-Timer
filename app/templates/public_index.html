@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+  <h2>Find tournaments</h2>
+  <form method="get" action="/">
+    <input type="text" name="q" value="{{ q }}" placeholder="Search by name or location" />
+    <button type="submit">Search</button>
+  </form>
+</section>
+
+<section>
+  <h2>Running & Scheduled (Draw Published)</h2>
+  {% if tournaments %}
+  <ul>
+    {% for t in tournaments %}
+    <li>
+      <a href="/tournaments/{{ t.id }}"><strong>{{ t.name }}</strong></a>
+      <span>{{ t.location }} • {{ t.starts_at.strftime('%Y-%m-%d %H:%M') }} • {{ t.status }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No tournaments available.</p>
+  {% endif %}
+</section>
+
+<p><a href="/admin/login">Administrator login</a></p>
+{% endblock %}

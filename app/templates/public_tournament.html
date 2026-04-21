@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ tournament.name }}</h2>
+<p>{{ tournament.location }} • {{ tournament.starts_at.strftime('%Y-%m-%d %H:%M') }} • {{ tournament.status }}</p>
+
+<h3>Matches</h3>
+{% if matches %}
+<table>
+  <thead>
+    <tr><th>Round</th><th>Table</th><th>Players</th><th>Score</th><th>Status</th></tr>
+  </thead>
+  <tbody>
+    {% for m in matches %}
+    <tr>
+      <td>{{ m.round_name }}</td>
+      <td>{{ m.table_no }}</td>
+      <td>{{ m.player_a }} vs {{ m.player_b }}</td>
+      <td>{{ m.score_a }} - {{ m.score_b }}</td>
+      <td>{{ 'Finished' if m.is_finished else 'Live' }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>No matches added yet.</p>
+{% endif %}
+{% endblock %}
